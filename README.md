@@ -166,7 +166,7 @@ This is the stage where you have a scan of what's in the data, errors, inconcsis
 
 **Data**
 
-''' sql
+``` sql
 
 SELECT TOP (1000) [Column_1]
       ,[NOMBRE]
@@ -184,10 +184,10 @@ SELECT TOP (1000) [Column_1]
       ,[column14]
   FROM [youtube_db].[dbo].[top_uk_youtubers_2024]
 
-'''
+```
 
 #### Output
-![SQL Viewone](assets/images/SQL_Query_Result_1.png)
+![SQL Viewone](assets/images/SQL_Query_Result1.PNG)
 
 
 - What do we expect the clean data to look like? (What should it contain? What contraints should we apply to it?)
@@ -285,10 +285,14 @@ FROM
     view_uk_youtubers_2024;
 
 ```
+
 #### Output
-![SQL Viewtwo](assets/images/SQL_Query_Result_4a.png)
+
+![sqL_viewtwo](/assets/images/SQL_Query_Result_4a.PNG)
+
 
 ## Column count check
+
 ### SQL query 
 ```sql
 /*
@@ -302,9 +306,12 @@ FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE
     TABLE_NAME = 'view_uk_youtubers_2024'
+```
 
 #### Output
-![SQL Viewthree](assets/images/SQL_Query_Result_4b.png)
+
+![sqL_viewthree](/assets/images/SQL_Query_Result_4b.PNG)
+
 
 ## Data type check
 ### SQL query 
@@ -312,7 +319,6 @@ WHERE
 /*
 # Check the data types of each column from the view by checking the INFORMATION SCHEMA view
 */
-
 -- 1.
 SELECT
     COLUMN_NAME,
@@ -321,10 +327,11 @@ FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE
     TABLE_NAME = 'view_uk_youtubers_2024';
-'''
+```
 
 #### Output
-![SQL Viewfour](assets/images/SQL_Query_Result_4c.png)
+![SQL_Viewfour](/assets/images/SQL_Query_Result_4c.PNG)
+
 
 ## Duplicate count check
 ### SQL query 
@@ -352,13 +359,13 @@ HAVING
 ```
 
 #### Output
-![SQL Viewfive](assets/images/SQL_Query_Result_4d.png)
+![SQL Viewfive](assets/images/SQL_Query_Result_4d.PNG)
 
 
 ## Results
 
 - What does the dashboard look like?
-![dashboard](assets/images/PowerBi_dashboard.png)
+![dashboard](assets/images/Powerbi_dashboard.PNG)
 
 This shows the Top UK Youtubers in 2024 so far. 
 
@@ -438,22 +445,17 @@ RETURN viewsPerSubscriber
 #### SQL query
 
 ''' sql 
-
 /* 
-# 1. Define variables
-# 2. Create a CTE that rounds the average views per video
-# 3. Select the columns you need and create calculated columns from existing ones
-# 4. Filter results by YouTube channels
-# 5. Sort results by net profits (from highest to lowest)
+1. Define variables
+2. Create a CTE that rounds the average views per video
+3. Select the columns you need and create calculated columns from existing ones
+4. Filter results by YouTube channels
+5. Sort results by net profits (from highest to lowest)
 */
-
 
 DECLARE @conversionRate FLOAT = 0.02; -- the conversion rate at 2%
 DECLARE @productCost MONEY  = 5.0; -- the product cost at $5
 DECLARE @campaignCost MONEY = 50000.0; -- the campaign cost at $50,000
-
-
-
 
 With ChannelData AS (
 	SELECT 
@@ -483,8 +485,9 @@ ORDER BY
 
 OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
 '''
+
 #### Output
-![SQL ViewSix](assets/images/SQL_Query_Result_6.png)
+![SQL ViewSix](assets/images/SQL_Query_Result_6.PNG)
 
 
 ## Discovery
