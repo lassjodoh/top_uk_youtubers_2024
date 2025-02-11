@@ -286,9 +286,7 @@ FROM
 
 ```
 
-#### Output
-
-![sqL_viewtwo](/assets/images/SQL_Query_Result_4a.PNG)
+![sqL_viewtwo](https://github.com/lassjodoh/top_uk_youtubers_2024/blob/main/assets/images/SQL%20Query%20Result%204%20a.PNG)
 
 
 ## Column count check
@@ -310,7 +308,7 @@ WHERE
 
 #### Output
 
-![sqL_viewthree](/assets/images/SQL_Query_Result_4b.PNG)
+![SQL_Viewthree](https://github.com/lassjodoh/top_uk_youtubers_2024/blob/main/assets/images/SQL%20Query%20Result%204%20b.PNG)
 
 
 ## Data type check
@@ -328,9 +326,8 @@ FROM
 WHERE
     TABLE_NAME = 'view_uk_youtubers_2024';
 ```
-
 #### Output
-![SQL_Viewfour](/assets/images/SQL_Query_Result_4c.PNG)
+![SQL_Viewfour](https://github.com/lassjodoh/top_uk_youtubers_2024/blob/main/assets/images/SQL%20Query%20Result%204%20c.PNG)
 
 
 ## Duplicate count check
@@ -444,7 +441,7 @@ RETURN viewsPerSubscriber
 
 #### SQL query
 
-''' sql 
+``` sql 
 /* 
 1. Define variables
 2. Create a CTE that rounds the average views per video
@@ -484,7 +481,7 @@ ORDER BY
     total_subscribers DESC, net_profit DESC
 
 OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
-'''
+```
 
 #### Output
 ![SQL ViewSix](assets/images/SQL_Query_Result_6.PNG)
